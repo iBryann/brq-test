@@ -1,13 +1,20 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-const initialState = {
+type InitialStateType = {
+  name: string;
+  lastName: string;
+  email: string;
+  country: string;
+};
+
+const initialState: InitialStateType = {
   name: "Bryann",
   lastName: "Brandão",
   email: "",
   country: "Brasil",
 };
 
-export type FieldsType = keyof typeof initialState;
+export type FieldsType = keyof InitialStateType;
 
 const userSlice = createSlice({
   name: "user",
