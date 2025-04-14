@@ -9,7 +9,7 @@ export const App = () => {
   return (
     <>
       <h1>
-        Vite + React + {user.name} {user.lastName}
+        Vite + React + {user.name} {user.lastName} {user.country}
       </h1>
 
       <video

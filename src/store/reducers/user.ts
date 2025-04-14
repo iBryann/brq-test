@@ -4,7 +4,7 @@ const initialState = {
   name: "Bryann",
   lastName: "Brandão",
   email: "",
-  country: "",
+  country: "Brasil",
 };
 
 export type FieldsType = keyof typeof initialState;
