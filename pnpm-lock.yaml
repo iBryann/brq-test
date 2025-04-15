@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@hookform/resolvers':
+    specifier: ^5.0.1
+    version: 5.0.1(react-hook-form@7.55.0)
   '@reduxjs/toolkit':
     specifier: ^2.6.1
     version: 2.6.1(react-redux@9.2.0)(react@19.1.0)
@@ -14,15 +17,30 @@ dependencies:
   react-dom:
     specifier: ^19.0.0
     version: 19.1.0(react@19.1.0)
+  react-hook-form:
+    specifier: ^7.55.0
+    version: 7.55.0(react@19.1.0)
   react-redux:
     specifier: ^9.2.0
     version: 9.2.0(@types/react@19.1.1)(react@19.1.0)(redux@5.0.1)
   react-router:
     specifier: ^7.5.0
     version: 7.5.0(react-dom@19.1.0)(react@19.1.0)
+  redux:
+    specifier: ^5.0.1
+    version: 5.0.1
+  redux-persist:
+    specifier: ^6.0.0
+    version: 6.0.0(react@19.1.0)(redux@5.0.1)
+  reset-css:
+    specifier: ^5.0.2
+    version: 5.0.2
   styled-components:
     specifier: ^6.1.17
     version: 6.1.17(react-dom@19.1.0)(react@19.1.0)
+  zod:
+    specifier: ^3.24.2
+    version: 3.24.2
 
 devDependencies:
   '@eslint/js':
@@ -559,6 +577,15 @@ packages:
       levn: 0.4.1
     dev: true
 
+  /@hookform/resolvers@5.0.1(react-hook-form@7.55.0):
+    resolution: {integrity: sha512-u/+Jp83luQNx9AdyW2fIPGY6Y7NG68eN2ZW8FOJYL+M0i4s49+refdJdOp/A9n9HFQtQs3HIDHQvX3ZET2o7YA==}
+    peerDependencies:
+      react-hook-form: ^7.55.0
+    dependencies:
+      '@standard-schema/utils': 0.3.0
+      react-hook-form: 7.55.0(react@19.1.0)
+    dev: false
+
   /@humanfs/core@0.19.1:
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
     engines: {node: '>=18.18.0'}
@@ -816,6 +843,10 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@standard-schema/utils@0.3.0:
+    resolution: {integrity: sha512-e7Mew686owMaPJVNNLs55PUvgz371nKgwsc4vxE49zsODpJEnxgxRo2y/OKrqueavXgZNMDVj3DdHFlaSAeU8g==}
+    dev: false
 
   /@types/babel__core@7.20.5:
     resolution: {integrity: sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==}
@@ -1692,6 +1723,15 @@ packages:
       scheduler: 0.26.0
     dev: false
 
+  /react-hook-form@7.55.0(react@19.1.0):
+    resolution: {integrity: sha512-XRnjsH3GVMQz1moZTW53MxfoWN7aDpUg/GpVNc4A3eXRVNdGXfbzJ4vM4aLQ8g6XCUh1nIbx70aaNCl7kxnjog==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      react: ^16.8.0 || ^17 || ^18 || ^19
+    dependencies:
+      react: 19.1.0
+    dev: false
+
   /react-redux@9.2.0(@types/react@19.1.1)(react@19.1.0)(redux@5.0.1):
     resolution: {integrity: sha512-ROY9fvHhwOD9ySfrF0wmvu//bKCQ6AeZZq1nJNtbDC+kk5DuSuNX/n6YWYF/SYy7bSba4D4FSz8DJeKY/S/r+g==}
     peerDependencies:
@@ -1739,6 +1779,19 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
+  /redux-persist@6.0.0(react@19.1.0)(redux@5.0.1):
+    resolution: {integrity: sha512-71LLMbUq2r02ng2We9S215LtPu3fY0KgaGE0k8WRgl6RkqxtGfl7HUozz1Dftwsb0D/5mZ8dwAaPbtnzfvbEwQ==}
+    peerDependencies:
+      react: '>=16'
+      redux: '>4.0.0'
+    peerDependenciesMeta:
+      react:
+        optional: true
+    dependencies:
+      react: 19.1.0
+      redux: 5.0.1
+    dev: false
+
   /redux-thunk@3.1.0(redux@5.0.1):
     resolution: {integrity: sha512-NW2r5T6ksUKXCabzhL9z+h206HQw/NJkcLm1GPImRQ8IzfXwRGqjVhKJGauHirT0DAuyy6hjdnMZaRoAcy0Klw==}
     peerDependencies:
@@ -1753,6 +1806,10 @@ packages:
 
   /reselect@5.1.1:
     resolution: {integrity: sha512-K/BG6eIky/SBpzfHZv/dd+9JBFiS4SWV7FIujVyJRux6e45+73RaUHXLmIR1f7WOMaQ0U1km6qwklRQxpJJY0w==}
+    dev: false
+
+  /reset-css@5.0.2:
+    resolution: {integrity: sha512-YtgUGSq5z5W0NPSjsBW7ys7rtWa8P8AiE7S6Fg3d1TQCPpAodgYyLuZYlU0AOsLtprk/fC9ormHN/0pAavVIDw==}
     dev: false
 
   /resolve-from@4.0.0:
@@ -2022,3 +2079,7 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
+
+  /zod@3.24.2:
+    resolution: {integrity: sha512-lY7CDW43ECgW9u1TcT3IoXHflywfVqDYze4waEz812jR/bZ8FHDsl7pFQoSZTz5N+2NqRXs8GBwnAwo3ZNxqhQ==}
+    dev: false

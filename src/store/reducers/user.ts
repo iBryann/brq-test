@@ -1,35 +1,32 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-type InitialStateType = {
-  name: string;
-  lastName: string;
-  email: string;
-  country: string;
-};
+import { IFormData } from "src/pages/SignUp/types";
 
-const initialState: InitialStateType = {
-  name: "Bryann",
-  lastName: "Brandão",
+const DEFAULT_STATE: IFormData = {
+  name: "",
+  lastName: "",
   email: "",
-  country: "Brasil",
+  country: "",
 };
 
-export type FieldsType = keyof InitialStateType;
+export type FieldsType = keyof IFormData;
 
 const userSlice = createSlice({
   name: "user",
-  initialState,
+  initialState: DEFAULT_STATE,
   reducers: {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    change(state, action: PayloadAction<{ name: FieldsType; value: any }>) {
-      const { name, value } = action.payload;
+    createUser(state, action: PayloadAction<IFormData>) {
+      localStorage.setItem("brq:isAuthenticated", "true");
 
-      console.log({ name, value });
+      return { ...state, ...action.payload };
+    },
+    logout() {
+      localStorage.removeItem("brq:isAuthenticated");
 
-      state[name] = value;
+      return DEFAULT_STATE;
     },
   },
 });
 
 export const userReducer = userSlice.reducer;
-export const { change } = userSlice.actions;
+export const { createUser, logout } = userSlice.actions;

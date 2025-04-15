@@ -1,23 +1,40 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export interface ThemeState {
-  theme: "light" | "dark";
+export { ThemeProvider } from "./ThemeProvider";
+import { ITheme } from "./types";
+import { DARK } from "./configs/dark";
+import { LIGHT } from "./configs/light";
+
+export enum MODE_ENUM {
+  LIGHT = "light",
+  DARK = "dark",
 }
 
-const initialState: ThemeState = {
-  theme: "light",
+export type ThemeStateType = {
+  mode: `${MODE_ENUM}`;
+  theme: ITheme;
+};
+
+const initialState: ThemeStateType = {
+  mode: MODE_ENUM.LIGHT,
+  theme: LIGHT,
 };
 
 export const themeSlice = createSlice({
-  name: "counter",
+  name: "theme",
   initialState,
   reducers: {
-    toggle: (state) => {
-      if (state.theme === "light") state.theme = "dark";
-      else state.theme = "light";
+    toggleTheme: (state) => {
+      if (state.mode === MODE_ENUM.LIGHT) {
+        state.mode = MODE_ENUM.DARK;
+        state.theme = DARK;
+      } else {
+        state.mode = MODE_ENUM.LIGHT;
+        state.theme = LIGHT;
+      }
     },
   },
 });
 
-export const { toggle } = themeSlice.actions;
+export const { toggleTheme } = themeSlice.actions;
 export const themeReducer = themeSlice.reducer;

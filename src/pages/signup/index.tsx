@@ -1,54 +1,40 @@
 import { useSelector, useDispatch } from "react-redux";
 
 import BRQIcon from "src/assets/logo-signup.svg";
-import { SignupContainer } from "./styles";
-import { toggle } from "src/store/reducers/theme";
 import { StoreType } from "src/store";
-import { useEffect, useRef } from "react";
+import { SignUpContainer } from "./styles";
+import { toggleTheme } from "src/store/reducers/theme";
+import { Form } from "./Form";
+import { useEffect } from "react";
+import { useNavigate } from "react-router";
 
-export const Signup = () => {
-  const { theme } = useSelector((state: StoreType) => state.theme);
+export const SignUp = () => {
+  const { mode } = useSelector((state: StoreType) => state.theme);
+  const { name } = useSelector((state: StoreType) => state.user);
   const dispatch = useDispatch();
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.playbackRate = 0.5;
+    if (localStorage.getItem("brq:isAuthenticated")) {
+      navigate("/configuration");
     }
   }, []);
 
   return (
-    <SignupContainer>
+    <SignUpContainer>
       <div className="brand">
-        <video
-          ref={videoRef}
-          className="brand-video-bg"
-          preload="auto"
-          loop={true}
-          autoPlay={true}
-          muted={true}
-          playsInline={true}
-        >
-          <source
-            type="video/mp4"
-            src="https://www.brq.com/wp-content/uploads/2023/09/Fusion-V2.mp4"
-          />
-        </video>
+        <img src={BRQIcon} alt="BRQ" />
 
-        <div className="brand-content">
-          <img src={BRQIcon} alt="BRQ" />
+        <h2>BRQ Exchange - {name}</h2>
 
-          <h2>BRQ Exchange</h2>
-
-          <button onClick={() => dispatch(toggle())} type="button">
-            Toggle - {theme}
-          </button>
-        </div>
+        <button onClick={() => dispatch(toggleTheme())} type="button">
+          Toggle - {mode}
+        </button>
       </div>
 
-      <form name="signup" className="signup">
-        312312321
-      </form>
-    </SignupContainer>
+      <div className="form-wrapper">
+        <Form />
+      </div>
+    </SignUpContainer>
   );
 };

@@ -1,27 +1,21 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
-import { BrowserRouter, Route, Routes } from "react-router";
 
-import "./styles/global.css";
-import { store } from "./store/index.ts";
-import { App } from "./App.tsx";
-import { Signup } from "./pages";
-
-function PageNotFound() {
-  return "Página não encontrada: 404";
-}
+import "src/styles/global.css";
+import { persistor, store } from "src/store";
+import { AppRoutes } from "src/routes/index.tsx";
+import { ThemeProvider } from "./store/reducers/theme";
+import { PersistGate } from "redux-persist/integration/react";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <BrowserRouter>
-      <Provider store={store}>
-        <Routes>
-          <Route index element={<App />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="*" element={<PageNotFound />} />
-        </Routes>
-      </Provider>
-    </BrowserRouter>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <ThemeProvider>
+          <AppRoutes />
+        </ThemeProvider>
+      </PersistGate>
+    </Provider>
   </StrictMode>
 );

@@ -1,54 +1,75 @@
 import styled from "styled-components";
 
-export const SignupContainer = styled.main`
+export const SignUpContainer = styled.main`
   height: 100vh;
   display: flex;
 
-  > {
+  > * {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
   }
 
   .brand {
-    overflow: hidden;
-    position: relative;
     flex: 1;
-    background: red;
+    align-items: center;
+    justify-content: center;
+    background-color: ${({ theme }) => theme.colors.background.primary};
 
-    .brand-video-bg {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      height: 101%;
-      transform: translate(-50%, -50%);
+    img {
     }
 
-    .brand-content {
-      z-index: 1;
-      position: relative;
-      background-color: rgba(0, 0, 0, 0.6);
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
+    h2 {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 28px;
+      text-align: center;
+      color: #ffffff;
+    }
+  }
 
-      img {
+  .form-wrapper {
+    justify-content: center;
+    width: 60vw;
+    padding: 2rem;
+    background-color: ${({ theme }) => theme.colors.background.secondary};
+
+    .form {
+      max-width: 450px;
+
+      h1 {
+        font-weight: 400;
+        font-size: 3.5rem;
+        letter-spacing: -0.25px;
+        color: ${({ theme }) => theme.colors.text.primary};
+        margin-bottom: 4rem;
       }
 
-      h2 {
-        font-weight: 500;
-        font-size: 20px;
-        line-height: 28px;
-        text-align: center;
-        color: #ffffff;
+      .button-wrapper {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 2rem;
       }
     }
   }
 
-  .signup {
-    background: blue;
-    width: 60vw;
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    flex-direction: column;
+
+    .brand {
+      flex: none;
+      padding: 2rem 0;
+    }
+
+    .form-wrapper {
+      width: 100%;
+
+      .form {
+        max-width: none;
+
+        h1 {
+          font-size: 3rem;
+        }
+      }
+    }
   }
 `;
