@@ -16,17 +16,10 @@ const userSlice = createSlice({
   initialState: DEFAULT_STATE,
   reducers: {
     createUser(state, action: PayloadAction<IFormData>) {
-      localStorage.setItem("brq:isAuthenticated", "true");
-
       return { ...state, ...action.payload };
-    },
-    logout() {
-      localStorage.removeItem("brq:isAuthenticated");
-
-      return DEFAULT_STATE;
     },
   },
 });
 
 export const userReducer = userSlice.reducer;
-export const { createUser, logout } = userSlice.actions;
+export const { createUser } = userSlice.actions;

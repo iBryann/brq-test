@@ -18,9 +18,16 @@ export const LIGHT: ITheme = {
       focus: "#ed8b00 ",
     },
     button: {
-      text: "#FFF",
-      background: "#121313",
-      hover: "#ed8b00",
+      menu: {
+        text: "#121313",
+        background: "#fff",
+        hover: "#B7D1FF",
+      },
+      cta: {
+        text: "#FFF",
+        background: "#121313",
+        hover: "#ed8b00",
+      },
     },
   },
 };

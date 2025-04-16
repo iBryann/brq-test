@@ -1,13 +1,13 @@
-import { useForm } from "react-hook-form";
+import { useEffect, useState } from "react";
 import { z } from "zod";
+import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-import { Button, Input, Select } from "src/components";
-import { useEffect, useState } from "react";
-import { CountryListType, IFormData } from "./types";
-import { useDispatch } from "react-redux";
+import { login } from "src/store/reducers";
 import { createUser } from "src/store/reducers/user";
-import { useNavigate } from "react-router";
+import { Button, Input, Select } from "src/components";
+import { CountryListType, IFormData } from "./types";
 
 const formSchema = z.object({
   name: z.string().min(1, "Nome é obrigatório"),
@@ -24,11 +24,10 @@ export const Form = () => {
     register,
     handleSubmit,
   } = useForm<IFormData>({ resolver: zodResolver(formSchema) });
-  const navigate = useNavigate();
 
   function onSubmit(data: IFormData) {
     dispatch(createUser(data));
-    navigate("/configuration");
+    dispatch(login());
   }
 
   useEffect(() => {

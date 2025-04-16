@@ -39,9 +39,16 @@ export interface IThemeMode {
       focus: string;
     };
     button: {
-      text: string;
-      background: string;
-      hover: string;
+      menu: {
+        text: string;
+        background: string;
+        hover: string;
+      };
+      cta: {
+        text: string;
+        background: string;
+        hover: string;
+      };
     };
   };
 }

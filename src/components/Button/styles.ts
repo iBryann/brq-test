@@ -7,12 +7,12 @@ export const ButtonContainer = styled.button`
   font-size: 1rem;
   line-height: 2rem;
   letter-spacing: 0.5px;
-  color: ${({ theme }) => theme.colors.button.text};
-  background-color: ${({ theme }) => theme.colors.button.background};
+  color: ${({ theme }) => theme.colors.button.cta.text};
+  background-color: ${({ theme }) => theme.colors.button.cta.background};
   transition: background-color 0.2s;
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.button.hover};
+    background-color: ${({ theme }) => theme.colors.button.cta.hover};
     cursor: pointer;
   }
 `;
