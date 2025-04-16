@@ -34,7 +34,7 @@ export const Layout = ({ children, ...props }: ILayout) => {
 
         <ul className="navbar-menu">
           <li>
-            <button type="button" onClick={() => navigate("/")}>
+            <button type="button" onClick={() => navigate("/home")}>
               <Icon name="Home" /> Home
             </button>
           </li>

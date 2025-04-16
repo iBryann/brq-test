@@ -1,0 +1,63 @@
+export const COLUMNS = [
+  { sortable: true, id: "id", label: "ID" },
+  { sortable: true, id: "createdAt", label: "Created at", format: "dd/MM/yyyy" },
+  { sortable: true, id: "active", label: "Active" },
+  { sortable: true, id: "age", label: "Age" },
+  { sortable: true, id: "name", label: "First name" },
+  { sortable: true, id: "email", label: "Email" },
+];
+
+export const ROWS = [
+  { id: 1, createdAt: new Date("2023-10-08"), active: false, age: 23, name: "Alfonse Peskin", email: "apeskin0@hud.gov" },
+  { id: 2, createdAt: new Date("2023-09-11"), active: true, age: 21, name: "Pippo Dickens", email: "pdickens1@indiatimes.com" },
+  { id: 3, createdAt: new Date("2023-10-09"), active: true, age: 40, name: "Marti Pattenden", email: "mpattenden2@samsung.com" },
+  { id: 4, createdAt: new Date("2023-01-23"), active: false, age: 19, name: "Wini Lovelace", email: "wlovelace3@netvibes.com" },
+  { id: 5, createdAt: new Date("2023-07-19"), active: true, age: 19, name: "Bill Guiton", email: "bguiton4@si.edu" },
+  { id: 6, createdAt: new Date("2023-07-02"), active: false, age: 25, name: "Mellisent Goddert.sf", email: "mgoddertsf5@wiley.com" },
+  { id: 7, createdAt: new Date("2023-09-11"), active: true, age: 23, name: "Jeremy Barroux", email: "jbarroux6@constantcontact.com" },
+  { id: 8, createdAt: new Date("2023-08-24"), active: false, age: 25, name: "Tiffany Castelow", email: "tcastelow7@rakuten.co.jp" },
+  { id: 9, createdAt: new Date("2023-03-03"), active: true, age: 20, name: "Sylas Giampietro", email: "sgiampietro8@independent.co.uk" },
+  { id: 10, createdAt: new Date("2023-04-22"), active: true, age: 19, name: "Aarika Grix", email: "agrix9@admin.ch" },
+  { id: 11, createdAt: new Date("2023-11-15"), active: true, age: 33, name: "Neill Marty", email: "nmartya@4shared.com" },
+  { id: 12, createdAt: new Date("2023-07-14"), active: true, age: 33, name: "Aubine Chipperfield", email: "achipperfieldb@smh.com.au" },
+  { id: 13, createdAt: new Date("2023-12-30"), active: false, age: 31, name: "Roselle Dmitrienko", email: "rdmitrienkoc@comcast.net" },
+  { id: 14, createdAt: new Date("2023-11-15"), active: false, age: 32, name: "Lisha Sancias", email: "lsanciasd@reddit.com" },
+  { id: 15, createdAt: new Date("2023-07-20"), active: true, age: 29, name: "Way Bowle", email: "wbowlee@msn.com" },
+  { id: 16, createdAt: new Date("2023-04-23"), active: false, age: 30, name: "Shanda Merner", email: "smernerf@bandcamp.com" },
+  { id: 17, createdAt: new Date("2023-12-26"), active: false, age: 33, name: "Abigale Soloway", email: "asolowayg@pcworld.com" },
+  { id: 18, createdAt: new Date("2023-11-14"), active: true, age: 31, name: "Christoper Menelaws", email: "cmenelawsh@sakura.ne.jp" },
+  { id: 19, createdAt: new Date("2023-02-11"), active: false, age: 18, name: "Gwyn Meneer", email: "gmeneeri@imgur.com" },
+  { id: 20, createdAt: new Date("2023-10-28"), active: false, age: 33, name: "Frieda Coche", email: "fcochej@tuttocitta.it" },
+];
+
+export const COLUMNS_TAG = [
+  { sortable: false, id: "id", label: "ID" },
+  { sortable: true, id: "createdAt", label: "Created at", format: "dd/MM/yyyy" },
+  { sortable: false, id: "name", label: "First name" },
+  { sortable: false, id: "email", label: "Email" },
+  { sortable: false, id: "status", label: "Status" },
+];
+
+export const ROWS_TAG = [
+  { id: 1, createdAt: new Date("2023-10-08"), name: "Alfonse Peskin", email: "apeskin0@hud.gov", status: 'Sucesso' },
+  { id: 2, createdAt: new Date("2023-09-11"), name: "Pippo Dickens", email: "pdickens1@indiatimes.com", status: 'Falha' },
+  { id: 3, createdAt: new Date("2023-10-09"), name: "Marti Pattenden", email: "mpattenden2@samsung.com", status: 'Pendente' },
+  { id: 4, createdAt: new Date("2023-01-23"), name: "Wini Lovelace", email: "wlovelace3@netvibes.com", status: 'Fora do prazo' },
+  { id: 5, createdAt: new Date("2023-07-19"), name: "Bill Guiton", email: "bguiton4@si.edu", status: 'Lendo cartão' },
+  { id: 6, createdAt: new Date("2023-07-02"), name: "Mellisent Goddert.sf", email: "mgoddertsf5@wiley.com", status: 'Aguardando' },
+  { id: 7, createdAt: new Date("2023-09-11"), name: "Jeremy Barroux", email: "jbarroux6@constantcontact.com", status: 'Erro' },
+  { id: 8, createdAt: new Date("2023-08-24"), name: "Tiffany Castelow", email: "tcastelow7@rakuten.co.jp", status: 'Em auditoria' },
+  { id: 9, createdAt: new Date("2023-03-03"), name: "Sylas Giampietro", email: "sgiampietro8@independent.co.uk", status: 'Em auditoria' },
+  { id: 10, createdAt: new Date("2023-04-22"), name: "Aarika Grix", email: "agrix9@admin.ch", status: 'Sucesso' },
+  { id: 11, createdAt: new Date("2023-11-15"), name: "Neill Marty", email: "nmartya@4shared.com", status: 'Falha' },
+  { id: 12, createdAt: new Date("2023-07-14"), name: "Marti Pattenden", email: "mpattenden2@samsung.com", status: 'Pendente' },
+  { id: 4, createdAt: new Date("2023-01-23"), name: "Aubine Chipperfield", email: "achipperfieldb@smh.com.au", status: 'Fora' },
+  { id: 13, createdAt: new Date("2023-12-30"), name: "Roselle Dmitrienko", email: "rdmitrienkoc@comcast.net", status: 'Fora do prazo' },
+  { id: 14, createdAt: new Date("2023-11-15"), name: "Lisha Sancias", email: "lsanciasd@reddit.com", status: 'Lendo cartão' },
+  { id: 15, createdAt: new Date("2023-07-20"), name: "Way Bowle", email: "wbowlee@msn.com", status: 'Erro' },
+  { id: 16, createdAt: new Date("2023-04-23"), name: "Shanda Merner", email: "smernerf@bandcamp.com", status: 'Em auditoria' },
+  { id: 17, createdAt: new Date("2023-12-26"), name: "Abigale Soloway", email: "asolowayg@pcworld.com", status: 'Erro' },
+  { id: 18, createdAt: new Date("2023-11-14"), name: "Christoper Menelaws", email: "cmenelawsh@sakura.ne.jp", status: 'Pendente' },
+  { id: 19, createdAt: new Date("2023-02-11"), name: "Gwyn Meneer", email: "gmeneeri@imgur.com", status: 'Falha' },
+  { id: 20, createdAt: new Date("2023-10-28"), name: "Frieda Coche", email: "fcochej@tuttocitta.it", status: 'Sucesso' },
+];

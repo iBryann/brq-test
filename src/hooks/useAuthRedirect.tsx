@@ -9,9 +9,7 @@ export const useAuthRedirect = () => {
   const { isAuthenticated } = useSelector((state: StoreType) => state.auth);
 
   useEffect(() => {
-    if (isAuthenticated) {
-      navigate("/configuration");
-    } else {
+    if (!isAuthenticated) {
       navigate("/");
     }
   }, [isAuthenticated, navigate]);

@@ -20,6 +20,7 @@ const rootReducer = combineReducers({
 const persistConfig = {
   key: "root",
   storage,
+  blacklist: ["layout"],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

@@ -1,16 +1,18 @@
-import { useSelector } from "react-redux";
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
 
-import { StoreType } from "./store";
+import { AppRoutes } from "./routes";
+import { persistor, store } from "./store";
+import { ThemeProvider } from "./store/reducers/theme";
 
 export const App = () => {
-  const { user } = useSelector((state: StoreType) => state);
-  // const dispatch = useDispatch();
-
   return (
-    <>
-      <h1>
-        Vite + React + {user.name} {user.lastName} {user.country}
-      </h1>
-    </>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <ThemeProvider>
+          <AppRoutes />
+        </ThemeProvider>
+      </PersistGate>
+    </Provider>
   );
 };

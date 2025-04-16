@@ -1,5 +1,6 @@
 import { HTMLAttributes } from "react";
 
+import { ChevronTopDown } from "./paths/ChevronTopDown";
 import { Close } from "./paths/Close";
 import { Config } from "./paths/Config";
 import { Exit } from "./paths/Exit";
@@ -31,6 +32,7 @@ export const ICON_ZOOM = {
 };
 
 export const ICONS = {
+  ChevronTopDown,
   Close,
   Config,
   Exit,
